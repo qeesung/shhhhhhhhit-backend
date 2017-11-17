@@ -24,6 +24,7 @@ api.add_resource(TodoSimple, '/<string:todo_id>')
 
 # GET /toilets
 # GET /toilets?available=true
+# GET /toilets?available=true&type=western
 # GET /toilets/{id}
 # PUT /toilets/{id}
 # DEL /toilets/{id}
