@@ -1,6 +1,7 @@
 {
     "_default": {
         "1": {
+            "sex": "male",
             "available": false,
             "id": 1,
             "name": "F5-3A-T01",
@@ -8,6 +9,7 @@
             "updated_at": ""
         },
         "2": {
+            "sex": "female",
             "available": true,
             "id": 2,
             "name": "F5-3A-T02",
