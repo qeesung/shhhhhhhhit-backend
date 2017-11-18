@@ -30,7 +30,7 @@ class Toilet(Resource):
     def put(self, toilet_id):
         json_data = request.get_json(force=True)
         available = json_data.get("available")
-        print "available: %s" % available
+        print "update toilet %s to available: %s" % (toilet_id, available)
         toilets.update({'available': available}, where('id') == toilet_id)
         return toilets.search(where('id') == toilet_id)
 
@@ -39,4 +39,4 @@ api.add_resource(Toilets, "/toilets")
 api.add_resource(Toilet, "/toilets/<int:toilet_id>")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
