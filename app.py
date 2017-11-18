@@ -10,20 +10,6 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
-todos = {}
-
-
-class TodoSimple(Resource):
-    def get(self, todo_id):
-        return {todo_id: todos[todo_id]}
-
-    def put(self, todo_id):
-        todos[todo_id] = request.form['data']
-        return {todo_id: todos[todo_id]}
-
-
-api.add_resource(TodoSimple, '/<string:todo_id>')
-
 # GET /toilets
 # GET /toilets?available=true
 # GET /toilets?available=true&type=western
@@ -36,22 +22,22 @@ class Toilets(Resource):
         return toilets.all()
 
 class Toilet(Resource):
-    def get(self, id):
-        return toilets.search(where('id') == id)
+    def get(self, toilet_id):
+        return toilets.search(where('id') == toilet_id)
 
-    def put(self, id):
+    def put(self, toilet_id):
         available = request.form["available"]
-        print "available: %s" % (available)
+        print "available: %s" % available
         if available == "true":
-            toilets.update({'available': True}, where('id') == id)
+            toilets.update({'available': True}, where('id') == toilet_id)
         elif available == "false":
-            toilets.update({'available': False}, where('id') == id)
+            toilets.update({'available': False}, where('id') == toilet_id)
         else:
-            print "Parameter error: %s" %(available)
-        return toilets.search(where('id') == id)
+            print "Parameter error: %s" % available
+        return toilets.search(where('id') == toilet_id)
 
 api.add_resource(Toilets, "/toilets")
-api.add_resource(Toilet, "/toilets/<int:id>")
+api.add_resource(Toilet, "/toilets/<int:toilet_id>")
 
 if __name__ == '__main__':
     app.run(debug=True)

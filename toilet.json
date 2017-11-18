@@ -1,1 +1,18 @@
-{"_default": {"1": {"count": 7, "type": "apple"}, "2": {"available": false, "id": 0, "name": "F5-3B-T01"}, "3": {"available": true, "id": 1, "name": "F5-3B-T01"}, "4": {"available": true, "id": 2, "name": "F5-3B-T01"}, "5": {"count": 7, "type": "apple"}, "6": {"available": true, "type": "western", "id": 0, "name": "F5-3B-T01"}, "7": {"available": true, "type": "eastern", "id": 1, "name": "F5-3B-T01"}, "8": {"available": true, "type": "eastern", "id": 2, "name": "F5-3B-T01"}}}
+{
+    "_default": {
+        "1": {
+            "available": false,
+            "id": 1,
+            "name": "F5-3A-T01",
+            "type": "坐坑",
+            "updated_at": ""
+        },
+        "2": {
+            "available": false,
+            "id": 2,
+            "name": "F5-3A-T02",
+            "type": "蹲坑",
+            "updated_at": ""
+        }
+    }
+}
