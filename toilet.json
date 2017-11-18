@@ -1,18 +1,2 @@
-{
-    "_default": {
-        "1": {
-            "available": false,
-            "id": 1,
-            "name": "F5-3A-T01",
-            "type": "坐坑",
-            "updated_at": ""
-        },
-        "2": {
-            "available": true,
-            "id": 2,
-            "name": "F5-3A-T02",
-            "type": "蹲坑",
-            "updated_at": ""
-        }
-    }
-}
+{"_default": {"1": {"available": true, "name": "F5-3A-T01", "type": "\u5750\u5751", "id": 1, "updated_at": ""}, "2": {"available": false, "type": "\u8e72\u5751", "id": 2, "name": "F5-3A-T02", "updated_at": ""}}}
+
