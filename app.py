@@ -1,12 +1,14 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from tinydb import TinyDB, Query, where
+from flask_cors import CORS
 
 toilets = TinyDB('toilet.json')
 usage = TinyDB('usage.json')
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 todos = {}
 
