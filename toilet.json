@@ -8,7 +8,7 @@
             "updated_at": ""
         },
         "2": {
-            "available": false,
+            "available": true,
             "id": 2,
             "name": "F5-3A-T02",
             "type": "蹲坑",
