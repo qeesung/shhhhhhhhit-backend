@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 from tinydb import TinyDB, Query, where
 from flask_cors import CORS
+import datetime
 
 toilets = TinyDB('toilet.json')
 usage = TinyDB('usage.json')
@@ -31,7 +32,7 @@ class Toilet(Resource):
         json_data = request.get_json(force=True)
         available = json_data.get("available")
         print "update toilet %s to available: %s" % (toilet_id, available)
-        toilets.update({'available': available}, where('id') == toilet_id)
+        toilets.update({'available': available, 'updated_at': str(datetime.datetime.now())}, where('id') == toilet_id)
         return toilets.search(where('id') == toilet_id)
 
 
