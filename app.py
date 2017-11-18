@@ -10,6 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
+
 # GET /toilets
 # GET /toilets?available=true
 # GET /toilets?available=true&type=western
@@ -21,6 +22,7 @@ class Toilets(Resource):
     def get(self):
         return toilets.all()
 
+
 class Toilet(Resource):
     def get(self, toilet_id):
         return toilets.search(where('id') == toilet_id)
@@ -31,6 +33,7 @@ class Toilet(Resource):
         print "update toilet %s to available: %s" % (toilet_id, available)
         toilets.update({'available': available}, where('id') == toilet_id)
         return toilets.search(where('id') == toilet_id)
+
 
 api.add_resource(Toilets, "/toilets")
 api.add_resource(Toilet, "/toilets/<int:toilet_id>")
