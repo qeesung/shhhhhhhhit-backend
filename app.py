@@ -28,14 +28,10 @@ class Toilet(Resource):
         return toilets.search(where('id') == toilet_id)
 
     def put(self, toilet_id):
-        available = request.form["available"]
+        json_data = request.get_json(force=True)
+        available = json_data.get("available")
         print "available: %s" % available
-        if available == "true":
-            toilets.update({'available': True}, where('id') == toilet_id)
-        elif available == "false":
-            toilets.update({'available': False}, where('id') == toilet_id)
-        else:
-            print "Parameter error: %s" % available
+        toilets.update({'available': available}, where('id') == toilet_id)
         return toilets.search(where('id') == toilet_id)
 
 
