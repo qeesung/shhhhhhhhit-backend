@@ -26,7 +26,7 @@ stages:
     steps:
     - script: echo Test && exit -1
 
-- stage: test
+- stage: test2
   dependsOn: build
   jobs:
   - job: run_tests
@@ -36,7 +36,9 @@ stages:
     - script: echo Test
     
 - stage: staging
-  dependsOn: test
+  dependsOn: 
+    - test1
+    - test2
   jobs:
   - job: deploy_staging
     pool:
