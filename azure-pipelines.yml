@@ -24,7 +24,7 @@ stages:
     pool:
       vmImage: 'Ubuntu 16.04'
     steps:
-    - script: echo Test
+    - script: echo Test && exit -1
 
 - stage: test
   dependsOn: build
