@@ -7,7 +7,7 @@ trigger:
 - master
 
 # Don't run against PRs
-pr: none
+pr: none   
 
 stages:
 - stage: build
